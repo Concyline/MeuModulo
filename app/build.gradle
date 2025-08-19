@@ -1,6 +1,9 @@
 plugins {
     alias(libs.plugins.android.application)
+
+    id 'maven-publish'
 }
+
 
 android {
     namespace 'siac.com.meumodulo'
@@ -25,6 +28,19 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_11
         targetCompatibility JavaVersion.VERSION_11
+    }
+}
+
+publishing {
+    publications {
+        release(MavenPublication) {
+            afterEvaluate {
+                from components.release
+            }
+            groupId = 'com.github.Concyline'   // 👈 seu usuário GitHub
+            artifactId = 'MeuModulo'           // 👈 nome da lib
+            version = '1.0.1'                  // 👈 versão
+        }
     }
 }
 
