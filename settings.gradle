@@ -21,3 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "MeuModulo"
 include ':app'
+include ':matemarica'
