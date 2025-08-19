@@ -1,4 +1,4 @@
-package siac.com.meumodulo;
+package siac.com.matemarica;
 
 public class Matematica {
 

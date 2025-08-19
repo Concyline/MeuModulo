@@ -33,6 +33,7 @@ dependencies {
 
     implementation libs.appcompat
     implementation libs.material
+    implementation project(':matemarica')
     testImplementation libs.junit
     androidTestImplementation libs.ext.junit
     androidTestImplementation libs.espresso.core
