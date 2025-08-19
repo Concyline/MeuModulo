@@ -1,5 +1,7 @@
 plugins {
     alias(libs.plugins.android.library)
+
+    id 'maven-publish'
 }
 
 android {
@@ -22,6 +24,19 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_11
         targetCompatibility JavaVersion.VERSION_11
+    }
+}
+
+publishing {
+    publications {
+        release(MavenPublication) {
+            afterEvaluate {
+                from components.release
+            }
+            groupId = 'com.github.Concyline'   // 👈 seu usuário GitHub
+            artifactId = 'matemarica'           // 👈 nome da lib
+            version = '1.0.3'                  // 👈 versão
+        }
     }
 }
 
