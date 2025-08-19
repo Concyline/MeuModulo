@@ -32,11 +32,12 @@ publishing {
         release(MavenPublication) {
             groupId = 'com.github.Concyline'
             artifactId = 'matemarica'
-            version = '1.0.4'
+            version = '1.0.5'
 
             afterEvaluate {
-                // Publica o AAR do build release
-                artifact("$buildDir/outputs/aar/${project.name}-release.aar")
+                artifact("$buildDir/outputs/aar/${project.name}-release.aar") {
+                    builtBy tasks.named("bundleReleaseAar") // 🔹 garante que o AAR será gerado antes
+                }
             }
         }
     }
