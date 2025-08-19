@@ -31,8 +31,8 @@ publishing {
     publications {
         release(MavenPublication) {
             groupId = 'com.github.Concyline'
-            artifactId = 'matemarica'
-            version = '1.0.7'
+            artifactId = 'MeuModulo'
+            version = '1.0.8'
 
             afterEvaluate {
                 artifact("$buildDir/outputs/aar/${project.name}-release.aar") {
