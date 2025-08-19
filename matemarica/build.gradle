@@ -22,20 +22,22 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_11
-        targetCompatibility JavaVersion.VERSION_11
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
 }
 
 publishing {
     publications {
         release(MavenPublication) {
+            groupId = 'com.github.Concyline'
+            artifactId = 'matemarica'
+            version = '1.0.4'
+
             afterEvaluate {
-                from components.release
+                // Publica o AAR do build release
+                artifact("$buildDir/outputs/aar/${project.name}-release.aar")
             }
-            groupId = 'com.github.Concyline'   // 👈 seu usuário GitHub
-            artifactId = 'matemarica'           // 👈 nome da lib
-            version = '1.0.3'                  // 👈 versão
         }
     }
 }
