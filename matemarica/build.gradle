@@ -32,7 +32,7 @@ publishing {
         release(MavenPublication) {
             groupId = 'com.github.Concyline'
             artifactId = 'MeuModulo'
-            version = '1.0.8'
+            version = '1.0.9'
 
             afterEvaluate {
                 artifact("$buildDir/outputs/aar/${project.name}-release.aar") {

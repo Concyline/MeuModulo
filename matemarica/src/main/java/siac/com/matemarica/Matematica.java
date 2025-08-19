@@ -18,6 +18,10 @@ public class Matematica {
         return Math.abs(a); // Retorna o valor absoluto, pois MDC é sempre positivo
     }
 
+    public static int soma(int a, int b){
+        return a + b;
+    }
+
     /**
      * Calcula o Mínimo Múltiplo Comum (MMC) entre dois números inteiros.
      *
